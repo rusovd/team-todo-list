@@ -28,7 +28,7 @@ Username.propTypes = {
 const Profile = ({ username, avatarUrl, theme }) => (
   <Container>
     <ImgLoader url={avatarUrl} width={[30, 45, 60]} height={[30, 45, 60]} />
-    <Username fontWeight={[400,800]} fontSize={[0,1,2]}>{username}</Username>
+    <Username fontWeight={[700,400]} fontSize={[0,1,2]}>{username}</Username>
   </Container>
 );
 

@@ -47,7 +47,7 @@ Heading.defaultProps = {
 const Header = () => {
   return (
     <Box px={[3, 4]} py={[5]} color="white" bg="blue">
-      <Heading fontSize={[2, 3, 5]}>Team ToDo App</Heading>
+      <Heading fontSize={[2, 3, 5]}>Team To-Do List</Heading>
       <Text fontSize={[0, 1, 2]} fontWeight="400">Basic demo</Text>
     </Box>
   );

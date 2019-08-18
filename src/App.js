@@ -9,7 +9,7 @@ import MenuList from './components/MenuList'
 // import TodoList from 'containers/TodoList';
 
 const Layout = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubic', sans-serif;
   line-height: 1.5;
   display: flex;
   height: 100vh;
@@ -24,7 +24,7 @@ const Layout = styled.div`
 `;
 
 const ListTodos = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubic', sans-serif;
   line-height: 1.5;
   width: 100%;
 `;

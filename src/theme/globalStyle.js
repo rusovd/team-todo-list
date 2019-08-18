@@ -6,9 +6,9 @@ const Style = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    font-family: 'Roboto', sans-serif;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Rubic');
+    font-family: 'Rubic', sans-serif;
+    font-family: "Rubic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -22,7 +22,7 @@ const Style = createGlobalStyle`
 
 export const theme = {
   fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
-  fontFamily: 'Roboto',
+  fontFamily: 'Rubic',
   space: [
     // margin and padding
     0,

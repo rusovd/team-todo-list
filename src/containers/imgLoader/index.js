@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from './Spinner';
 import styled from 'styled-components';
 
@@ -37,6 +38,12 @@ const ImgLoader = ({ url, height, width }) => {
       </div>
     </>
   )
+};
+
+ImgLoader.propTypes = {
+  url: PropTypes.string,
+  height: PropTypes.array,
+  width: PropTypes.array
 };
 
 export default ImgLoader;
