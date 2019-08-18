@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components'
-import Style, { Theme }  from './theme/globalStyle'
-import SideBar from './components/SideBar';
+import Style, { theme }  from './theme/globalStyle'
+import Faker from 'faker'
 import Header from './components/Header';
+import Profile from './components/Profile';
+import MenuList from './components/MenuList'
 // import ListHeader from 'components/ListHeader';
 // import TodoList from 'containers/TodoList';
 
@@ -27,12 +29,29 @@ const ListTodos = styled.div`
   width: 100%;
 `;
 
+const SideBar = styled.div`
+  min-width: 160px;
+  width: 30%;
+  box-shadow: 4px 1px 5px 0px rgba(0,0,0,0.16);
+  height: 100vh;
+  padding: 0 10px;
+  background: white;
+  z-index: 100;
+`;
+
+// const Div = styled.div `
+//   color: ${props => { console.log(props.theme); return props.theme.colors.brand800 } };
+// `
+
 const App = () => {
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={theme}>
       <Layout >
         <Style />
-        <SideBar />
+        <SideBar >
+          <Profile username={Faker.name.findName()} avatarUrl="https://loremflickr.com/240/240/spring/" />
+          <MenuList name="Team To-do List" />
+        </SideBar>
         <ListTodos>
           <Header/>
         </ListTodos>

@@ -1,24 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
-const Spinner = () => (
-  <StyledSpinner viewBox="0 0 50 50">
-    <circle
-      className="path"
-      cx="25"
-      cy="25"
-      r="20"
-      fill="none"
-      strokeWidth="2"
-    />
-  </StyledSpinner>
+import {
+  height,
+  width,
+} from 'styled-system'
+
+const Spinner = ({ height, width }) => (
+  <Wrapper height={height} width={width}>
+    <StyledSpinner viewBox="0 0 50 50">
+      <circle
+        className="path"
+        cx="25"
+        cy="25"
+        r="20"
+        fill="none"
+        strokeWidth="2"
+      />
+    </StyledSpinner>
+  </Wrapper>
 );
 
 const StyledSpinner = styled.svg`
   animation: rotate 1s linear infinite;
-  width: 50px;
-  height: 50px;
-
   & .path {
     stroke: #5652bf;
     stroke-linecap: round;
@@ -45,5 +49,15 @@ const StyledSpinner = styled.svg`
     }
   }
 `;
+
+const Wrapper = styled.div`
+  ${width}
+  ${height}
+`;
+
+Wrapper.propTypes = {
+  ...width.propTypes,
+  ...height.propTypes,
+}
 
 export default Spinner;

@@ -20,7 +20,7 @@ const Style = createGlobalStyle`
 
 `;
 
-export const Theme = {
+export const theme = {
   fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
   fontFamily: 'Roboto',
   space: [
@@ -35,8 +35,9 @@ export const Theme = {
     256,
   ],
   colors: {
-    blue: '#07c',
+    blue: '#571DE8',
     red: '#e10',
+    lightviolet: '#f4efff',
   },
 }
 

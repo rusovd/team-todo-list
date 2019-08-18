@@ -2,10 +2,21 @@ import React, { useState } from 'react';
 import Spinner from './Spinner';
 import styled from 'styled-components';
 
+import {
+  height,
+  width,
+} from 'styled-system'
 
 const Image = styled.img`
   border-radius: 50%;
+  ${width}
+  ${height}
 `;
+
+Image.propTypes = {
+  ...width.propTypes,
+  ...height.propTypes,
+}
 
 const ImgLoader = ({ url, height, width }) => {
   const [isLoading, setLoading] = useState(true);
@@ -15,7 +26,7 @@ const ImgLoader = ({ url, height, width }) => {
   }
   return (
     <>
-      { isLoading && <Spinner/> }
+      { isLoading && <Spinner height={height} width= {width}/> }
       <div style={{ display: isLoading ? "none" : "block" }}>
         <Image
           alt={url}
