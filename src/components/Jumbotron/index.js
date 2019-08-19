@@ -7,17 +7,20 @@ import {
   width,
   fontWeight,
   lineHeight,
+  maxHeight
 } from 'styled-system';
 
 import DateTime from '../DateTime';
 
 const Box = styled.div`
+  ${maxHeight}
   ${space}
   ${width}
   ${fontSize}
   ${color}
 `
 Box.propTypes = {
+  ...space.maxHeight,
   ...space.propTypes,
   ...width.propTypes,
   ...fontSize.propTypes,
@@ -48,7 +51,7 @@ Heading.defaultProps = {
 
 const Jumbotron = () => {
   return (
-    <Box px={[3, 4]} py={[5]} color="white" bg="blue">
+    <Box px={[3, 4]} py={[5]} maxHeight={['7rem', '10rem' ,'12rem']}color="white" bg="blue">
       <Heading fontSize={[2, 3, 5]}>Team To-Do List</Heading>
       <Text fontSize={[0, 1, 2]} fontWeight="400"><DateTime/></Text>
     </Box>

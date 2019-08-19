@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AddButton from 'components/AddButton';
-import ListItem from 'components/ListItem';
+import TodoItem from '../../components/TodoItem';
 import { connect } from 'react-redux';
 import { addTodo, toggleTodo, deleteTodo, editTodo } from '../../actions/todoList';
 
@@ -9,10 +8,9 @@ const ListContainer = styled.ul`
   padding: 15px;
   margin: 0;
   background: white;
-`;
-
-const ButtonContainer = styled.div`
-  padding: 15px;
+  width: 100%;
+  overflow-y: auto;
+  height: 70vh;
 `;
 
 const TodoList = ({ todoList, addTodo, toggleTodo, deleteTodo, editTodo }) => {
@@ -20,7 +18,7 @@ const TodoList = ({ todoList, addTodo, toggleTodo, deleteTodo, editTodo }) => {
     <>
       <ListContainer>
         {todoList.map(todo => (
-          <ListItem
+          <TodoItem
             key={todo.id}
             content={todo.content}
             isCompleted={!!todo.isCompleted}
@@ -32,9 +30,6 @@ const TodoList = ({ todoList, addTodo, toggleTodo, deleteTodo, editTodo }) => {
         {todoList.length === 0 &&
           'Click on the button below to add a new to-do'}
       </ListContainer>
-      <ButtonContainer>
-        <AddButton label="Add a to-do" onClick={addTodo} />
-      </ButtonContainer>
     </>
   );
 };

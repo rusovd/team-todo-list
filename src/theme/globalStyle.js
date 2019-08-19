@@ -6,6 +6,7 @@ const Style = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
     @import url('https://fonts.googleapis.com/css?family=Roboto');
     font-family: 'Roboto', sans-serif;
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

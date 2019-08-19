@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import posed from "react-pose";
 import styled from 'styled-components';
 import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
+import { addTodo, toggleTodo, deleteTodo, editTodo } from '../../actions/todoList';
 
 
 const PosedContainer = posed.button({
   idle: { scale: 1 },
-  hovered: { scale: 1.2 }
+  hovered: { scale: 1.1}
 });
 
 const Container = styled(PosedContainer)`
@@ -15,10 +17,10 @@ const Container = styled(PosedContainer)`
   border: 0;
   outline: none;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  
   cursor: pointer;
 `;
 
@@ -38,13 +40,13 @@ const Label = styled.div`
   margin-left: 10px;
 `;
 
-const AddButton = ({ onClick, label }) => {
+const AddButton = ({ label, addTodo }) => {
   const [isHovered, setHover] = useState(false);
   return (
   <Container type="button" 
-    onClick={onClick} pose={isHovered ? "hovered" : "idle"}
-    onMouseEnter={() => setHover(true)}
-    onMouseLeave={() => setHover(false)}>
+      onClick={addTodo}  pose={isHovered ? "hovered" : "idle"}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}>
     <RoundButton>
       <PlusIcon height={12} width={12} fill="white" />
     </RoundButton>
@@ -58,4 +60,16 @@ AddButton.propTypes = {
   label: PropTypes.string
 };
 
-export default AddButton;
+const actions = { addTodo, toggleTodo, deleteTodo, editTodo };
+
+function mapStateToProps(state) {
+  const { todoList } = state.todos;
+  return {
+    todoList,
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  actions
+)(AddButton);

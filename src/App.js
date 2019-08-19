@@ -6,6 +6,7 @@ import Jumbotron from './components/Jumbotron';
 import Profile from './components/Profile';
 import GroupList from './components/GroupList'
 import AddButton from './components/AddButton'
+import TodoList from './containers/TodoList'
 // import ListHeader from 'components/ListHeader';
 // import TodoList from 'containers/TodoList';
 
@@ -28,11 +29,27 @@ const ListTodos = styled.div`
   font-family: 'Roboto', sans-serif;
   display: flex;
   width: 100%;
+  min-height: 100%;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  > div {
+    // these are flex items
+    
+    // flex: 1; same as:
+    // flex-grow: 1;
+    // flex-basis: auto;
+    // flex: 1 1 auto;
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 `;
 
-const SideBar = styled.div`
+const SideBar = styled.section`
   min-width: 160px;
   width: 30%;
   box-shadow: 4px 1px 5px 0px rgba(0,0,0,0.16);
@@ -43,13 +60,14 @@ const SideBar = styled.div`
 `;
 
 const Footer = styled.div`
-  height: 5rem;
+  max-height:5rem;
   padding: 10px;
   color: red;
   height: 10%
   width: 100%;
   background: #e9e9e9;
-  display: flex;
+  flex-direction: unset;
+
 `;
 
 const Middle = styled.div`
@@ -73,11 +91,12 @@ const App = () => {
         </SideBar>
         <ListTodos>
           <Jumbotron/>
-          <Middle/>
-        <Footer>
-          <AddButton label="Add a to-do"  />
-          {/* onClick={addTodo} */}
-        </Footer>
+          <Middle>
+            <TodoList/>
+          </Middle>
+          <Footer>
+            <AddButton label="Add a to-do" />
+          </Footer>
         </ListTodos>
         
       </Layout>
