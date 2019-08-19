@@ -19,6 +19,12 @@ Image.propTypes = {
   ...height.propTypes,
 }
 
+const Div = styled.div`
+  line-height: 0;
+  display: ${props => props.isLoading ? "none": "block"};
+`;
+
+
 const ImgLoader = ({ url, height, width }) => {
   const [isLoading, setLoading] = useState(true);
 
@@ -28,14 +34,14 @@ const ImgLoader = ({ url, height, width }) => {
   return (
     <>
       { isLoading && <Spinner height={height} width= {width}/> }
-      <div style={{ display: isLoading ? "none" : "block" }}>
+      <Div isLoading={isLoading} >
         <Image
           alt={url}
           src={url}
           height={height}
           width= {width}
           onLoad={imageLoaded} />
-      </div>
+      </Div>
     </>
   )
 };

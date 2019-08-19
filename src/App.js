@@ -2,14 +2,15 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import Style, { theme }  from './theme/globalStyle'
 import Faker from 'faker'
-import Header from './components/Header';
+import Jumbotron from './components/Jumbotron';
 import Profile from './components/Profile';
-import MenuList from './components/MenuList'
+import GroupList from './components/GroupList'
+import AddButton from './components/AddButton'
 // import ListHeader from 'components/ListHeader';
 // import TodoList from 'containers/TodoList';
 
 const Layout = styled.div`
-  font-family: 'Rubic', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   display: flex;
   height: 100vh;
@@ -24,9 +25,11 @@ const Layout = styled.div`
 `;
 
 const ListTodos = styled.div`
-  font-family: 'Rubic', sans-serif;
-  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
   width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const SideBar = styled.div`
@@ -39,9 +42,25 @@ const SideBar = styled.div`
   z-index: 100;
 `;
 
-// const Div = styled.div `
-//   color: ${props => { console.log(props.theme); return props.theme.colors.brand800 } };
-// `
+const Footer = styled.div`
+  height: 5rem;
+  padding: 10px;
+  color: red;
+  height: 10%
+  width: 100%;
+  background: #e9e9e9;
+  display: flex;
+`;
+
+const Middle = styled.div`
+  height: 25rem;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  height:100%
+  background: white;
+  display: flex;
+`;
 
 const App = () => {
   return (
@@ -50,11 +69,17 @@ const App = () => {
         <Style />
         <SideBar >
           <Profile username={Faker.name.findName()} avatarUrl="https://loremflickr.com/240/240/spring/" />
-          <MenuList name="Team To-do List" />
+          <GroupList name="Team To-do List" />
         </SideBar>
         <ListTodos>
-          <Header/>
+          <Jumbotron/>
+          <Middle/>
+        <Footer>
+          <AddButton label="Add a to-do"  />
+          {/* onClick={addTodo} */}
+        </Footer>
         </ListTodos>
+        
       </Layout>
     </ThemeProvider>
   );

@@ -32,7 +32,7 @@ const IconContainer = styled.div`
   padding-right: 5px;
 `;
 
-const MenuList = ({ onClick, name }) => (
+const GroupList = ({ onClick, name }) => (
   <ButtonContainer type="button" onClick={onClick} bg="lightviolet">
     <IconContainer>
       <MenuIcon height={12} width={12} fill="grey" />
@@ -41,9 +41,9 @@ const MenuList = ({ onClick, name }) => (
   </ButtonContainer>
 );
 
-MenuList.propTypes = {
+GroupList.propTypes = {
   onClick: PropTypes.func,
   name: PropTypes.string,
 };
 
-export default MenuList;
+export default GroupList;
