@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/team-todo-list/static/js/main.caf00346.chunk.js",
+    "main.js.map": "/team-todo-list/static/js/main.caf00346.chunk.js.map",
+    "runtime~main.js": "/team-todo-list/static/js/runtime~main.c6b6e377.js",
+    "runtime~main.js.map": "/team-todo-list/static/js/runtime~main.c6b6e377.js.map",
+    "static/js/2.0fc77fb1.chunk.js": "/team-todo-list/static/js/2.0fc77fb1.chunk.js",
+    "static/js/2.0fc77fb1.chunk.js.map": "/team-todo-list/static/js/2.0fc77fb1.chunk.js.map",
+    "index.html": "/team-todo-list/index.html",
+    "precache-manifest.1fdebf0283557fc59d643bef7ae044b4.js": "/team-todo-list/precache-manifest.1fdebf0283557fc59d643bef7ae044b4.js",
+    "service-worker.js": "/team-todo-list/service-worker.js",
+    "static/media/menu.8086623c.svg": "/team-todo-list/static/media/menu.8086623c.svg",
+    "static/media/plus.9b082783.svg": "/team-todo-list/static/media/plus.9b082783.svg",
+    "static/media/trash.d7bec4e6.svg": "/team-todo-list/static/media/trash.d7bec4e6.svg"
+  }
+}
